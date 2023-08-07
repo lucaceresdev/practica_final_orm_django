@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lista de Laboratorios</title>
+</head>
+<body>
+    <h1>Lista de Laboratorios</h1>
+    <table border="1">
+        <tr>
+            <th>ID</th>
+            <th>Nombre</th>
+            <th>Ciudad</th>
+            <th>País</th>
+            <th>Editar</th>
+            <th>Eliminar</th>
+        </tr>
+        {% for laboratorio in laboratorios %}
+        <tr>
+            <td>{{ laboratorio.id }}</td>
+            <td>{{ laboratorio.nombre }}</td>
+            <td>{{ laboratorio.ciudad }}</td>
+            <td>{{ laboratorio.pais }}</td>
+            <td><a href="{% url 'update_laboratorio' laboratorio.id %}">Editar</a></td>
+            <td><a href="{% url 'delete_laboratorio' laboratorio.id %}">Eliminar</a></td>
+        </tr>
+        {% endfor %}
+    </table>
+    <br>
+    <a href="{% url 'create_laboratorio' %}">Crear Laboratorio</a>
+    <!-- Agrega aquí más opciones de CRUD si las tienes -->
+    <br>
+    <a href="{% url 'admin:index' %}">Panel de Administración</a>
+</body>
+</html>

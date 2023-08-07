@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Página de Inicio</title>
+</head>
+<body>
+    <h1>Bienvenido a la Página de Inicio</h1>
+    <p>Seleccione una opción:</p>
+    <ul>
+        <li><a href="{% url 'list_laboratorios' %}">Ver Laboratorios</a></li>
+        <li><a href="{% url 'create_laboratorio' %}">Crear Laboratorio</a></li>
+        <!-- Agrega aquí más opciones de CRUD si las tienes -->
+        <li><a href="{% url 'admin:index' %}">Panel de Administración</a></li>
+    </ul>
+</body>
+</html>
